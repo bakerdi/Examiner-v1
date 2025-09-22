@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <title>Conrad Scan Screen</title>
+  <link rel='stylesheet' type='text/css' href='main.css'>
+
+</head>
+
+<body>
+  <div class="overlay">
+
+    <div class="top-bar">
+      <div class="heatmap">
+        <div class="bar"></div>
+        <img src="./icons/arrowup.png" class="arrow" id="arrow" />
+      </div>
+    </div>
+
+
+    <div class="compass-container" id="compass-container">
+      <svg class="compass" width="80" height="80">
+        <circle cx="40" cy="40" stroke-width="1" r="35" stroke="#ffffff90" />
+        <line id="compass-indicator" x1="40" x2="40" y1="20" y2="60" stroke-width="4" stroke="lime" stroke-linecap="round" />
+        <line x1="40" x2="40" y1="20" y2="60" stroke="#ffffff50" />
+        <text fill="#ffffff" font-size="8" x="40" y="13" alignment-baseline="middle" text-anchor="middle"
+          text-align="center">N</text>
+
+        <text fill="#ffffff" font-size="8" x="40" y="68" alignment-baseline="middle" text-anchor="middle"
+          text-align="center">S</text>
+
+
+      </svg>
+    </div>
+
+
+    <div class="bottom-bar">
+      <div class="stop-button" onclick="handleStopButtonClick()">
+        <img src="icons/save_1-1.svg" class="button-icon" />
+        <span id="str-stop">Stop and Save</span>
+      </div>
+
+      <!-- <div class="new-line-button" id="new-line-button" onclick="handleNewLineButtonPress()">
+        <img src="icons/icons8-play-30.png" class="button-icon" />
+        <span id="str-next-line">Next Line</span>
+      </div>
+
+      <div class="new-data-button" id="new-data-button" onclick="handleNewDataButtonPress()">
+        <img src="icons/sensor.png" class="button-icon" />
+        <span id="str-data">Data</span>
+      </div> -->
+    </div>
+  </div>
+
+
+
+
+  <div class="popup-overlay" id="popup-overlay">
+    <div class="popup">
+      <div class="title-bar">
+        <div class="title" id="str-scan-overview">Scan Overview</div>
+        <img src="icons/close.svg" class="close" onclick="handlePopupCloseButtonClick()" />
+      </div>
+      <canvas width="200" height="200" class="overview-canvas" id="overview-canvas"></canvas>
+
+      <div class="popup-buttons">
+        <div class="popup-button exit" onclick="handleExitButtonPress()">
+          <span id="str-exit">Cancel</span>
+        </div>
+        <div class="popup-button save" onclick="handleSaveButtonClick()">
+          <img src="icons/save_1-1.svg" />
+          <span id="str-save">Save</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="back-button">
+    <img src="icons/back-1.svg" onclick="handleExitButtonPress()" />
+    <span id="str-exit">Exit</span>
+  </div>
+ -->
+
+  <!-- <script src="tonejs.js"></script> -->
+  <script src="config.js"></script>
+  <script src="audio.js"></script>
+  <script src="interpolation.js"></script>
+  <script src="data.js"></script>
+  <script src="three.js"></script>
+  <script src="gradient.js"></script>
+  <script src="movement.js"></script>
+  <script src="grid.js"></script>
+  <script src="main2.js"></script>
+  <script src="overview.js"></script>
+  <script src="dom.js"></script>
+  <script src="translation.js"></script>
+</body>
+
+</html>
